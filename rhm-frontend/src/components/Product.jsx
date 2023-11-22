@@ -31,13 +31,13 @@ const Product = () => {
       });
   }, [endpoint]);
 
-  function getFeaturedImage(product) {
-    if (product && product.images && product.images[0]) {
-      return product.images[0].src;
-    } else {
-      return "https://placehold.co/600x400";
-    }
-  } // end of getFeatured Image
+//   function getFeaturedImage(product) {
+//     if (product && product.images && product.images[0]) {
+//       return product.images[0].src;
+//     } else {
+//       return "https://placehold.co/600x400";
+//     }
+//   } // end of getFeatured Image
 
   if (loading) {
     return (
