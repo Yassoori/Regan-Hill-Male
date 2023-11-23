@@ -15,6 +15,8 @@ const Work = () => {
 //   const [works, setWorks] = useState(null);
   const [products, setProducts] = useState(null);
 //   const endpoint = `${baseUrl}/work?_embed`;
+const [filteredProducts, setFilteredProducts] = useState(null);
+const [filter, setFilter] = useState(null);
 
   useEffect(() => {
     axios
@@ -28,6 +30,21 @@ const Work = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    if (!filter) {
+      setFilteredProducts(products);
+    } else {
+      const filtered = products.filter((product) =>
+        product.categories.some((category) => category.name === filter)
+      );
+      setFilteredProducts(filtered);
+    }
+  }, [filter, products]);
+
+  const handleFilterClick = (selectedFilter) => {
+    setFilter((prevFilter) => (prevFilter === selectedFilter ? null : selectedFilter));
+  };
 
   if (loading) {
     return (
@@ -71,13 +88,14 @@ const Work = () => {
   return (
     <div className="container full-container">
       <ul className="filter">
-        <li onClick={(e) => setFilter(e.target.value)} value={"Mural"}>Murals</li>
-        <li onClick={(e) => setFilter(e.target.value)} value={"Print"}>Prints</li>
-        <li onClick={(e) => setFilter(e.target.value)} value={"Painting"}>Paintings</li>
+        <li onClick={() => handleFilterClick("Mural")}>Murals</li>
+        <li onClick={() => handleFilterClick("Print")}>Prints</li>
+        <li onClick={() => handleFilterClick("Painting")}>Paintings</li>
       </ul>
       <div className="container">
         {/* {loading ? <Loading /> : <Works works={works} />} */}
-        {loading ? <Loading /> : <Products products={products} />}
+        {/* {loading ? <Loading /> : <Products products={products} />} */}
+        {loading ? <Loading /> : <Products products={filteredProducts || products} />}
         {/* <Shopfront/> */}
       </div>
     </div>
