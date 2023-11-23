@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { applyStyles } from "../utilities/StyleUtils";
 
 const useCustomizer = () => {
   // variable for each setting from the customizer
@@ -18,9 +19,14 @@ const useCustomizer = () => {
     axios
       .get(`${baseUrl}/wp-json/custom-theme/v1/customizer-settings`)
       .then((response) => {
-        const { backgroundColor, landingBackgroundColor, headingFont, bodyFont, navbarColor, fontColor } =
-          response.data; // add to the destructure
-          console.log(landingBackgroundColor);
+        const {
+          backgroundColor,
+          landingBackgroundColor,
+          headingFont,
+          bodyFont,
+          navbarColor,
+          fontColor,
+        } = response.data; // add to the destructure
         setBgColor(backgroundColor);
         setLandingBgColor(landingBackgroundColor);
         setHeadingFont(headingFont);
@@ -28,17 +34,26 @@ const useCustomizer = () => {
         // change the state to the destructure
         setNavColor(navbarColor);
         setFontColor(fontColor);
-
-        console.log("Heading Font:", headingFont);
-        console.log("Body Font:", bodyFont);
-        console.log("Font Color:", fontColor);
       })
       .catch((error) => {
         console.error("Error fetching customizer settings:", error);
       });
   }, [baseUrl]);
 
-  return { bgColor, landingBgColor, headingFont, bodyFont, navColor, fontColor }; // add to the return object
+  // console.log("Heading Font:", headingFont);
+  // console.log("Body Font:", bodyFont);
+  // console.log("Font Color:", fontColor);
+
+  return {
+    bgColor,
+    landingBgColor,
+    headingFont,
+    bodyFont,
+    navColor,
+    fontColor,
+    applyStyles: () =>
+      applyStyles({ headingFont, bodyFont, bgColor, fontColor }), // add to the return object
+  };
 };
 
 export default useCustomizer;

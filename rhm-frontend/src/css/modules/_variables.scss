@@ -1,0 +1,44 @@
+// Reset
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+  }
+  
+  body {
+    width: 100%;
+    min-height: 99.4vh;
+    box-sizing: border-box;
+  
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+  
+  // Type Sizes
+  
+  $head-size: 40px;
+  $sub-size: 30px;
+  $body-size: 20px;
+  $button-size: 22px;
+  
+  $mob-head-size: 24px;
+  $mob-sub-size: 20px;
+  $mob-body-size: 14px;
+  $mob-button-size: 16px;
+  
+  // Margins
+  
+  $margin-bottom: 2em;
+  $big-margin-bottom: 4em;
+  $desktop-margin: 1em;
+  $mob-margin: 0.5em;
+  

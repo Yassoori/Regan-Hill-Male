@@ -22,7 +22,7 @@ const Home = () => {
         );
         if (response.status === 200) {
           const data = response.data;
-          console.log(response.data);
+          // console.log(response.data);
           setLogoUrl(data[0]);
         } else {
           console.error("Failed to fetch logo url", error);
@@ -34,8 +34,16 @@ const Home = () => {
 
     fetchNavLogo();
     setLandingBgStyle({ backgroundColor: `${landingBgColor}` });
-    console.log({ landingBgColor });
+    // console.log({ landingBgColor });
   }, [landingBgColor]);
+
+  const {
+    applyStyles,
+  } = useCustomizer();
+ 
+  useEffect(() => {
+    applyStyles();
+  }, [applyStyles])
 
   // RETURN OF THE HOME COMPONENT
   return (

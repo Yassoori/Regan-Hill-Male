@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
+import useCustomizer from "../hooks/useCustomizer";
 
 const productsUrl = import.meta.env.VITE_WC_PRODUCTS_URL;
 
@@ -68,6 +69,14 @@ const Work = () => {
 
     return <>{mappedProducts}</>;
   };
+
+  const {
+    applyStyles,
+  } = useCustomizer();
+ 
+  useEffect(() => {
+    applyStyles();
+  }, [applyStyles])
 
   return (
     <div className="container full-container">

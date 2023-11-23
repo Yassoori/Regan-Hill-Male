@@ -20,7 +20,7 @@ const Header = () => {
               const response = await axios.get(`${baseUrl}/wp-json/custom/v1/nav-logo`)
               if (response.status === 200) {
                   const data = response.data
-                  console.log(response.data);
+                  // console.log(response.data);
                   setLogoUrl(data[0])
               } else {
                 console.error("Failed to fetch logo url" , error)
