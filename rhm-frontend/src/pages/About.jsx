@@ -1,66 +1,53 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet";
+import Loading from "../components/Loading";
 
-const baseUrl = import.meta.env.VITE_WP_BASEURL;
+const aboutUrl = import.meta.env.VITE_WP_ABOUT_URL;
 
 const About = () => {
-//   const [aboutPhoto, setAboutPhoto] = useState("");
+  const [aboutEntry, setAboutEntry] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-//   //fetch the about photo with useEffect:
-//   useEffect(() => {
-//     const fetchAboutPhoto = async () => {
-//       try {
-//         const response = await axios.get(
-//           `${baseUrl}/wp-json/custom/v1/about-photo`
-//         );
-//         if (response.status === 200) {
-//           const data = response.data;
-//           console.log(response.data);
-//           setAboutPhoto(data[0]);
-//         } else {
-//           console.error("Failed to fetch about photo url", error);
-//         }
-//       } catch (error) {
-//         console.error("Error fetching lol URL", error);
-//       }
-//     };
+  useEffect(() => {
+    axios
+      .get(`${aboutUrl}`)
+      .then((res) => {
+        setAboutEntry(res.data);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-//     fetchNavLogo();
-//   }, []);
+  const AboutEntry = ({ abouts }) => {
+    if (!abouts) {
+      return null; // Handle the case when abouts is undefined or null
+    }
 
-  // RETURN OF THE HOME COMPONENT
+    const mappedAbouts = abouts.map((about, index) => (
+      <div className="about" key={index}>
+        <div dangerouslySetInnerHTML={{ __html: about.content.rendered }} />
+      </div>
+    ));
+
+    return <>{mappedAbouts}</>;
+  };
+
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>About</title>
         <meta name="description" content="This is the about page" />
         <meta name="keywords" content="keyword1, keyword2, keyword3" />
-        {/* { additional meta tags eg social media share tags for twitter, etc} */}
-        <meta
-          property="og:title"
-          content="Facebook Open Graph Meta Tag example"
-        />
+        {/* Additional meta tags, e.g., social media share tags for Twitter, etc. */}
+        <meta property="og:title" content="Facebook Open Graph Meta Tag example" />
       </Helmet>
       <div className="container double-container">
-        {/* <h2 class='about-greeting'>Kia Ora, I'm Regan</h2>
-        <div className="">
-          <img src={aboutPhoto} alt="Regan Hill-Male" className='about-image'/>
-          <p className="about-bio">
-            I'm a North Shore based artist, who's is practice is centred by the
-            rhythms and patterns of nature, and is deeply inspired by the beauty
-            and complexity of the natural world.
-            <br />
-            I work primarily with acrylics, embracing the unpredictability of
-            the creative process as I develop each piece intuitively. This
-            journey of discovery keeps my art fresh and exciting.
-            <br />
-            Since 2022, I've been focused on mural commissions, using my art to
-            enrich urban spaces with vibrancy and character. I believe that art
-            in schools is essential for inspiring our young kiwis to enjoy their
-            learning spaces, to aim high and reach their potential.
-          </p>
-        </div> */}
+        {loading ? (
+          <Loading />
+        ) : (
+          <AboutEntry abouts={aboutEntry} />
+        )}
       </div>
     </>
   );

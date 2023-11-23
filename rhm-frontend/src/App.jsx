@@ -8,42 +8,66 @@ import Footer from "./components/Footer";
 import Links from "./Links";
 
 function App() {
-  const { bgColor, landingBgColor, fontFamily, navbarColor } = useCustomizer();
+  const {
+    bgColor,
+    landingBgColor,
+    headingFont,
+    bodyFont,
+    navbarColor,
+    fontColor,
+  } = useCustomizer();
 
   useEffect(() => {
-    // Change the font based on the returned value
-    if (fontFamily === "Trykker") {
+    const h2Elements = document.getElementsByTagName("h2");
+
+    for (let i = 0; i < h2Elements.length; i++) {
+      if (headingFont === "Trykker") {
+        h2Elements[i].style.fontFamily = `'Trykker', sans-serif !important`;
+      }
+      if (headingFont === "Montserrat") {
+        h2Elements[i].style.fontFamily = `'Montserrat', sans-serif !important`;
+      }
+      if (headingFont === "Dosis") {
+        h2Elements[i].style.fontFamily = `'Dosis', sans-serif !important`;
+      }
+      if (headingFont === "Fira sans Condensed") {
+        h2Elements[i].style.fontFamily = `'Fira sans Condensed', sans-serif !important`;
+      }
+    }
+    
+    if (bodyFont === "Trykker") {
       document.body.style.fontFamily = `'Trykker', sans-serif`;
     }
-    if (fontFamily === "Montserrat") {
+    if (bodyFont === "Montserrat") {
       document.body.style.fontFamily = `'Montserrat', sans-serif`;
     }
-    if (fontFamily === "Dosis") {
+    if (bodyFont === "Dosis") {
       document.body.style.fontFamily = `'Dosis', sans-serif`;
     }
-    if (fontFamily === "Fira sans Condensed") {
+    if (bodyFont === "Fira sans Condensed") {
       document.body.style.fontFamily = `'Fira sans Condensed', sans-serif`;
     }
 
-    // apply the bg color to body element
-    document.body.style.backgroundColor = `#${bgColor}`;
+    // const pElements = document.getElementsByTagName("h3, p, li");
 
-    // const landingBg = document.getElementsByClassName(".landing-bg");
-
-    // // landingBg.style.backgroundColor = `#${landingBgColor}`
-
-    // // Check if any elements with the class "landing-bg" were found
-    // if (landingBg.length > 0) {
-    //   // Access the first element with the class "landing-bg" (you can modify this if needed)
-    //   const firstLandingBg = landingBg[0];
-
-    //   // Now, you can apply a background color to the selected element
-    //   firstLandingBg.style.backgroundColor = `#${landingBgColor}`;
-    // } else {
-    //   console.error('No element with the class "landing-bg" found.');
+    // for (let i = 0; i < pElements.length; i++) {
+    //   if (bodyFont === "Trykker") {
+    //     pElements[i].style.fontFamily = `'Trykker', sans-serif`;
+    //   }
+    //   if (bodyFont === "Montserrat") {
+    //     pElements[i].style.fontFamily = `'Montserrat', sans-serif`;
+    //   }
+    //   if (bodyFont === "Dosis") {
+    //     pElements[i].style.fontFamily = `'Dosis', sans-serif`;
+    //   }
+    //   if (bodyFont === "Fira sans Condensed") {
+    //     pElements[i].style.fontFamily = `'Fira sans Condensed', sans-serif`;
+    //   }
     // }
 
-  }, [bgColor, landingBgColor, fontFamily, navbarColor]);
+    document.body.style.background = `${bgColor}`;
+    document.body.style.color = `${fontColor}`;
+  }, [bgColor, landingBgColor, headingFont, bodyFont, navbarColor, fontColor]);
 
   return (
     <>

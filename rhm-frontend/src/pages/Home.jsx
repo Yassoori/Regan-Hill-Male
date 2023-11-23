@@ -32,39 +32,9 @@ const Home = () => {
       }
     };
 
-    // const landingBg = document.querySelector(".landing-bg");
-    // console.log({landingBgColor})
-
-    // // Check if the element with the class "landing-bg" was found
-    // if (landingBg) {
-    //   // Apply the background color to the selected element
-    //   landingBg.style.backgroundColor = `#${landingBgColor}`;
-    // } else {
-    //   console.error('No element with the class "landing-bg" found.');
-    // }
-
-    // const landingBg = document.querySelector(".landing-bg");
-
-    // landingBg.style.backgroundColor = `#${landingBgColor}`
-
-    // // // Check if any elements with the class "landing-bg" were found
-    // // if (landingBg.length > 0) {
-    // //   // Access the first element with the class "landing-bg" (you can modify this if needed)
-    // //   const firstLandingBg = landingBg[0];
-
-    // //   // Now, you can apply a background color to the selected element
-    // //   firstLandingBg.style.backgroundColor = `#${landingBgColor}`;
-    // // } else {
-    // //   console.error('No element with the class "landing-bg" found.');
-    // // }
-
     fetchNavLogo();
-
-    // Update the landing background style when landingBgColor changes
     setLandingBgStyle({ backgroundColor: `${landingBgColor}` });
-    console.log({landingBgColor})
-
-    // }, []);
+    console.log({ landingBgColor });
   }, [landingBgColor]);
 
   // RETURN OF THE HOME COMPONENT
@@ -74,7 +44,6 @@ const Home = () => {
         <title>Home</title>
         <meta name="description" content="This is the home page" />
         <meta name="keywords" content="keyword1, keyword2, keyword3" />
-        {/* { additional meta tags eg social media share tags for twitter, etc} */}
         <meta
           property="og:title"
           content="Facebook Open Graph Meta Tag example"
@@ -88,10 +57,10 @@ const Home = () => {
           <p className="blurb">blurb</p>
           <div className="cta">
             <Link to="/work" className="view-artworks">
-              View Artworks
+              <p className="cta-text">View Artworks</p>
             </Link>
             <Link to="/contact" className="inquire">
-              Inquire
+              <p className="cta-text">Inquire</p>
             </Link>
           </div>
         </div>
