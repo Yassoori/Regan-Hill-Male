@@ -269,14 +269,36 @@ import Footer from "./components/Footer";
 import Links from "./Links";
 
 function App() {
-  
   const {
-    applyStyles,
+    bgColor,
+    landingBgColor,
+    headingFont,
+    bodyFont,
+    navbarColor,
+    fontColor,
   } = useCustomizer();
- 
+
   useEffect(() => {
+    const applyStyles = () => {
+      // Apply heading font to h2 elements
+      const bodyElements = document.querySelectorAll("h3, p, li");
+      for (let i = 0; i < bodyElements.length; i++) {
+        bodyElements[i].style.fontFamily = `${bodyFont}, serif`;
+      }
+
+      // Apply heading font to h2 elements
+      const h2Elements = document.querySelectorAll("h2");
+      for (let i = 0; i < h2Elements.length; i++) {
+        h2Elements[i].style.fontFamily = `${headingFont}, sans-serif`;
+      }
+
+      // Apply background and font color
+      document.body.style.background = bgColor;
+      document.body.style.color = fontColor;
+    };
+
     applyStyles();
-  }, [applyStyles])
+  }, [bgColor, headingFont, bodyFont, fontColor]);
 
   return (
     <>

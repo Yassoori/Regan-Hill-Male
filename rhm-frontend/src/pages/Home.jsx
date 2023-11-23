@@ -37,14 +37,6 @@ const Home = () => {
     // console.log({ landingBgColor });
   }, [landingBgColor]);
 
-  const {
-    applyStyles,
-  } = useCustomizer();
- 
-  useEffect(() => {
-    applyStyles();
-  }, [applyStyles])
-
   // RETURN OF THE HOME COMPONENT
   return (
     <>

@@ -1,16 +1,3 @@
-// import React from 'react'
-
-// const StyleUtils = () => {
-//   return (
-//     <div>
-      
-//     </div>
-//   )
-// }
-
-// export default StyleUtils
-
-
 export const applyStyles = (customizerSettings) => {
 
     // Customizer Settings for Client
