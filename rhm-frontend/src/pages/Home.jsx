@@ -50,11 +50,12 @@ const Home = () => {
         />
       </Helmet>
       <div className="home-container">
-        <div className="">
+        <div className="home-text">
           <div id="logo">
             <img src={logoUrl} alt="Regan Hill-Male" />
           </div>
-          <p className="blurb">blurb</p>
+          <h2 className="greeting">Kia Ora, I'm Regan Hill-Male</h2>
+          <p className="blurb">I paint murals commisions and sell my prints and paintings here.</p>
           <div className="cta">
             <Link to="/work" className="view-artworks">
               <p className="cta-text">View Artworks</p>

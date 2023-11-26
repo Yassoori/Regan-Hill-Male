@@ -39,15 +39,15 @@ const Product = () => {
   }
 
   return (
-    <div id="shop-page" className="container">
+    <div id="shop-page" className="container double-container">
       <div className="left-container">
         <img src={product.images[0].src} alt={product.name} />
       </div>
       <div className="right-container">
         <h2 className="title">{product.name}</h2>
         <h2 className="price">
-          ${(parseFloat(product.prices.price) / 100).toFixed(2)}{" "}
-          {product.prices.currency_code}
+          ${(parseFloat(product.prices.price) / 100).toFixed(2)}{/*{" "}*/}
+          {/* {product.prices.currency_code} */}
         </h2>
         <div dangerouslySetInnerHTML={{ __html: product.description }} />
       </div>

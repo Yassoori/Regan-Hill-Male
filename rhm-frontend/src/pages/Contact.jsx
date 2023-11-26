@@ -121,8 +121,9 @@ const Contact = () => {
   return (
     <>
         <div id='contact-container' className='container single-container'>
-            <div>
-                <h2>Get in Touch</h2>
+            <div className='contact-container'>
+                <h2 className='contact-heading'>Get in Touch</h2>
+                <p className='contact-sub'>Interested in commissioning me to paint a mural, or be involved in any other project? Flick me a message about it and we can start from there.</p>
                 <ContactForm/>
             </div>
         </div>

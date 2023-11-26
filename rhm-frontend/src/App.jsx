@@ -281,13 +281,13 @@ function App() {
   useEffect(() => {
     const applyStyles = () => {
       // Apply heading font to h2 elements
-      const bodyElements = document.querySelectorAll("h3, p, li");
+      const bodyElements = document.querySelectorAll("h3, p, li, a, input, textarea");
       for (let i = 0; i < bodyElements.length; i++) {
         bodyElements[i].style.fontFamily = `${bodyFont}, serif`;
       }
 
       // Apply heading font to h2 elements
-      const h2Elements = document.querySelectorAll("h2");
+      const h2Elements = document.querySelectorAll("h2, button");
       for (let i = 0; i < h2Elements.length; i++) {
         h2Elements[i].style.fontFamily = `${headingFont}, sans-serif`;
       }
@@ -295,6 +295,11 @@ function App() {
       // Apply background and font color
       document.body.style.background = bgColor;
       document.body.style.color = fontColor;
+
+      const specialTextElements = document.querySelectorAll("a, button, .inquire");
+      for (let i = 0; i < specialTextElements.length; i++) {
+        specialTextElements[i].style.color = fontColor;
+      }
     };
 
     applyStyles();

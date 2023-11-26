@@ -26,4 +26,257 @@ body {
   height: 100%;
 }
 
+.container {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3,
+a,
+li,
+button {
+  font-size: 16px;
+  text-decoration: none;
+  color: #583b3b;
+}
+
+p,
+input,
+textarea {
+  font-size: 12px;
+}
+
+#topnav {
+  margin: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+#topnav #logo img {
+  align-items: center;
+}
+#topnav .left-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#topnav .left-nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#topnav .left-nav ul li {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+#topnav .left-nav img {
+  width: 30px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+#topnav .left-nav .menu-container {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+#footer #social-media-icons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+#footer #social-media-icons img {
+  width: 30px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.home-text {
+  max-width: 70%;
+  margin: auto;
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-text h2, .home-text .blurb {
+  margin-bottom: 12px;
+  text-align: center;
+}
+.home-text .cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home-text .cta a {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.home-text .cta .inquire {
+  border-radius: 12px;
+  border: 2px solid;
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.landing-bg {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 70%;
+  position: fixed;
+  top: 0;
+}
+.landing-bg img {
+  width: 100vw;
+  height: 100vh;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+.contact-container h2,
+.contact-container p {
+  margin-bottom: 6px;
+}
+.contact-container p {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.contact-container form {
+  width: 100%;
+}
+.contact-container form input,
+.contact-container form textarea,
+.contact-container form button {
+  width: 100%;
+  min-height: 36px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: start;
+  resize: none;
+  resize: vertical;
+}
+.contact-container form textarea {
+  min-height: 108px;
+}
+.contact-container form button {
+  text-align: center;
+  background: none;
+  border: 2px solid;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+.about-container h2,
+.about-container p {
+  margin-bottom: 6px;
+}
+.about-container p {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.about-container figure {
+  max-width: 100%;
+}
+.about-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.filter {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.filter li {
+  margin-right: 12px;
+}
+
+.card-container .product-card {
+  position: relative;
+  margin-bottom: 12px;
+}
+.card-container .product-card h2,
+.card-container .product-card h3 {
+  margin-bottom: 6px;
+}
+.card-container .product-card .title {
+  width: 75%;
+  grid-area: "title";
+}
+.card-container .product-card .price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  grid-area: "price";
+}
+.card-container .product-card .short-description {
+  display: flex;
+  flex-direction: row;
+}
+.card-container .product-card .short-description h3 {
+  margin-right: 6px;
+}
+.card-container .product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.left-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.right-container {
+  position: relative;
+}
+.right-container h2,
+.right-container h3 {
+  margin-bottom: 6px;
+}
+.right-container .title {
+  width: 75%;
+  grid-area: "title";
+}
+.right-container .price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  grid-area: "price";
+}
+
 /* @import url("https://fonts.cdnfonts.com/css/suncos"); *//*# sourceMappingURL=App.css.map */

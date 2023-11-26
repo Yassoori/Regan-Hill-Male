@@ -47,6 +47,7 @@ const Header = () => {
           </Link>
         </div>
         {/* Desktop Menu */}
+        <div className="left-nav">
         <ul id="menu">
           <li>
             <Link to="/work">Work</Link>
@@ -60,6 +61,7 @@ const Header = () => {
         </ul>
         <img src='/iconbag.png' alt="Cart" />
 
+
         {/* Hamburger on Mobile */}
         <div id="menu-container">
           <button
@@ -69,6 +71,7 @@ const Header = () => {
           >
             <List id="hamburger-icon" />
           </button>
+        </div>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
+// import useCustomizer from "../hooks/useCustomizer";
 
 const productsUrl = import.meta.env.VITE_WC_PRODUCTS_URL;
 
@@ -54,10 +55,11 @@ const Work = () => {
           <Link className="product-link" to={`/product/${product.id}`}>
             <h2 className="title">{product.name}</h2>
             <h2 className="price">
-              ${(parseFloat(product.prices.price) / 100).toFixed(2)}{" "}
-              {product.prices.currency_code}
+              ${(parseFloat(product.prices.price) / 100).toFixed(2)}{/* {" "}
+              {product.prices.currency_code} */}
             </h2>
             <div
+              className="short-description"
               dangerouslySetInnerHTML={{ __html: product.short_description }}
             />
             <img src={product.images[0].src} alt={product.name} />
@@ -76,7 +78,7 @@ const Work = () => {
         <li onClick={() => handleFilterClick("Print")}>Prints</li>
         <li onClick={() => handleFilterClick("Painting")}>Paintings</li>
       </ul>
-      <div className="container">
+      <div className="card-container">
         {loading ? (
           <Loading />
         ) : (
