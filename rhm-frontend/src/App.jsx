@@ -274,7 +274,6 @@ function App() {
     landingBgColor,
     headingFont,
     bodyFont,
-    navbarColor,
     fontColor,
   } = useCustomizer();
 
@@ -293,8 +292,10 @@ function App() {
       }
 
       // Apply background and font color
-      document.body.style.background = bgColor;
+      document.body.style.background = `#${bgColor}`;
+      console.log(bgColor);
       document.body.style.color = fontColor;
+      console.log(fontColor);
 
       const specialTextElements = document.querySelectorAll("a, button, .inquire");
       for (let i = 0; i < specialTextElements.length; i++) {

@@ -71,6 +71,46 @@ textarea {
   }
 }
 
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 18px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 36px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+
 // ----- Footer -----
 
 #footer {
@@ -109,7 +149,8 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  h2, .blurb {
+  h2,
+  .blurb {
     margin-bottom: $med-margin;
     text-align: center;
   }
@@ -120,7 +161,6 @@ textarea {
     a {
       margin-left: $med-margin;
       margin-right: $med-margin;
-
     }
     .inquire {
       border-radius: $med-margin;
@@ -128,7 +168,6 @@ textarea {
       padding: $small-margin;
       padding-left: $med-margin;
       padding-right: $med-margin;
-
     }
   }
 }
@@ -274,11 +313,11 @@ textarea {
 // ----- Product -----
 
 .left-container {
-  img{
-  width: 100%;
-  height: auto;
-  border-radius: $med-margin;
-  margin-bottom: $med-margin;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: $med-margin;
+    margin-bottom: $med-margin;
   }
 }
 

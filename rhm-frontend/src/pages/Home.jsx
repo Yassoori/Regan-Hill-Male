@@ -51,9 +51,9 @@ const Home = () => {
       </Helmet>
       <div className="home-container">
         <div className="home-text">
-          <div id="logo">
+          {/* <div id="logo">
             <img src={logoUrl} alt="Regan Hill-Male" />
-          </div>
+          </div> */}
           <h2 className="greeting">Kia Ora, I'm Regan Hill-Male</h2>
           <p className="blurb">I paint murals commisions and sell my prints and paintings here.</p>
           <div className="cta">
@@ -66,8 +66,7 @@ const Home = () => {
           </div>
         </div>
         <div key={landingBgColor} className="landing-bg" style={landingBgStyle}>
-          Landing Background
-          <img src="" alt="" className="landing-bg-image" />
+          {/* <img src="" alt="" className="landing-bg-image" /> */}
         </div>
       </div>
     </>
