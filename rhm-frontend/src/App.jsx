@@ -278,34 +278,50 @@ function App() {
   } = useCustomizer();
 
   useEffect(() => {
-    const applyStyles = () => {
-      // Apply heading font to h2 elements
-      const bodyElements = document.querySelectorAll("h3, p, li, a, input, textarea");
-      for (let i = 0; i < bodyElements.length; i++) {
-        bodyElements[i].style.fontFamily = `${bodyFont}, serif`;
-      }
+    const applyStyles = async () => {
+      // // Apply body font to h2 elements
+      // const bodyElements = document.querySelectorAll("h3, p, li, a, input, textarea");
+      // for (let i = 0; i < bodyElements.length; i++) {
+      //   bodyElements[i].style.fontFamily = `${bodyFont}, serif`;
+      // }
 
-      // Apply heading font to h2 elements
-      const h2Elements = document.querySelectorAll("h2, button");
-      for (let i = 0; i < h2Elements.length; i++) {
-        h2Elements[i].style.fontFamily = `${headingFont}, sans-serif`;
-      }
+      // // Apply heading font to h2 elements
+      // const headingElements = document.querySelectorAll("h2, button");
+      // for (let i = 0; i < headingElements.length; i++) {
+      //   headingElements[i].style.fontFamily = `${headingFont}, sans-serif`;
+      // }
 
       // Apply background and font color
-      document.body.style.background = `#${bgColor}`;
+      // document.body.style.background = `#${bgColor}`;
       console.log(bgColor);
-      document.body.style.color = fontColor;
+      // document.body.style.color = fontColor;
       console.log(fontColor);
+      console.log(headingFont, bodyFont);
 
-      const specialTextElements = document.querySelectorAll("a, button, .inquire");
-      for (let i = 0; i < specialTextElements.length; i++) {
-        specialTextElements[i].style.color = fontColor;
+      const blueTextElements = document.querySelectorAll("a, button, .inquire");
+      for (let i = 0; i < blueTextElements.length; i++) {
+        blueTextElements[i].style.color = fontColor;
       }
+
+      const styles = document.getElementById("dynamicStyles");
+      styles.innerHTML = `h3, p, li, a, input, textarea { font-family: ${bodyFont}, sans-serif; } 
+      h2, button { font-family: ${headingFont}, serif; }
+      body { background: #${bgColor}; color: ${fontColor}}
+      a, button, .inquire { color: ${fontColor}}`
     };
 
     applyStyles();
-  }, [bgColor, headingFont, bodyFont, fontColor]);
 
+    //Function to be executed every 1 seconds
+    // const intervalId = setInterval(applyStyles, 1000);
+
+    // Clean up the interval on component unmount
+    // return () => clearInterval(intervalId);
+
+  }, [bgColor, headingFont, bodyFont, fontColor]);
+// }, [bgColor, fontColor]);
+
+  console.log(headingFont, bodyFont);
   return (
     <>
       <HashRouter>

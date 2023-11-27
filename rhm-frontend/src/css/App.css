@@ -23,13 +23,19 @@ body ::-webkit-scrollbar {
 html,
 body {
   position: relative;
-  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
   width: 80%;
   margin: auto;
   margin-bottom: 24px;
+  flex-grow: 1;
 }
 
 h2 {
@@ -83,38 +89,6 @@ textarea {
 #topnav .left-nav .menu-container {
   margin-left: 6px;
   margin-right: 6px;
-}
-
-#nav-icon3 span:nth-child(1) {
-  top: 0px;
-}
-
-#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
-  top: 18px;
-}
-
-#nav-icon3 span:nth-child(4) {
-  top: 36px;
-}
-
-#nav-icon3.open span:nth-child(1) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
-}
-
-#nav-icon3.open span:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-#nav-icon3.open span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-#nav-icon3.open span:nth-child(4) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
 }
 
 #footer {
