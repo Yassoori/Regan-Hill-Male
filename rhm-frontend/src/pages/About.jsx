@@ -27,7 +27,7 @@ const About = () => {
     const mappedAbouts = abouts.map((about, index) => (
       // <div className="about" key={index}>
       <div
-        className="about-container"
+        className="about-container double-container"
         key={index}
         dangerouslySetInnerHTML={{ __html: about.content.rendered }}
       />
@@ -49,7 +49,7 @@ const About = () => {
           content="Facebook Open Graph Meta Tag example"
         />
       </Helmet>
-      <div className="container double-container">
+      <div className="container">
         {loading ? <Loading /> : <AboutEntry abouts={aboutEntry} />}
       </div>
     </>

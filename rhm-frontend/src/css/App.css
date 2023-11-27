@@ -32,7 +32,7 @@ body {
 }
 
 .container {
-  width: 80%;
+  max-width: 80%;
   margin: auto;
   margin-bottom: 24px;
   flex-grow: 1;
@@ -48,7 +48,6 @@ li,
 button {
   font-size: 16px;
   text-decoration: none;
-  color: #583b3b;
 }
 
 p,
@@ -64,8 +63,13 @@ textarea {
   align-items: center;
   margin-bottom: 24px;
 }
+#topnav #logo a {
+  display: flex;
+  align-items: center;
+}
 #topnav #logo img {
   align-items: center;
+  max-width: 40vw;
 }
 #topnav .left-nav {
   display: flex;
@@ -123,17 +127,20 @@ textarea {
   margin-bottom: 12px;
   text-align: center;
 }
+.home-text .blurb {
+  margin-bottom: 48px;
+}
 .home-text .cta {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 .home-text .cta a {
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 .home-text .cta .inquire {
-  border-radius: 12px;
+  border-radius: 24px;
   border: 2px solid;
   padding: 6px;
   padding-left: 12px;
@@ -141,16 +148,22 @@ textarea {
 }
 
 .landing-bg {
+  display: none;
   width: 100vw;
   height: 100vh;
   z-index: -1;
   opacity: 70%;
-  position: fixed;
+  position: absolute;
   top: 0;
 }
-.landing-bg img {
+
+.landing-bg-image {
+  display: none;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0;
 }
 
 .contact-container {
@@ -175,7 +188,7 @@ textarea {
 .contact-container form button {
   width: 100%;
   min-height: 36px;
-  border-radius: 12px;
+  border-radius: 24px;
   border: none;
   margin-bottom: 12px;
   padding-top: 12px;
@@ -286,4 +299,73 @@ textarea {
   grid-area: "price";
 }
 
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3,
+  a,
+  li,
+  button {
+    font-size: 24px;
+    text-decoration: none;
+  }
+  p,
+  input,
+  textarea {
+    font-size: 20px;
+  }
+  #topnav .left-nav ul li {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  #social-media-icons img {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .single-container {
+    max-width: 40%;
+  }
+  .double-container {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 24px;
+  }
+  .double-container .about-greeting {
+    display: none;
+  }
+  .double-container .left-container,
+  .double-container figure {
+    width: 50%;
+    margin-right: 12px;
+  }
+  .double-container .right-container,
+  .double-container .about-bio {
+    width: 50%;
+  }
+  .double-container .right-container p,
+  .double-container .about-bio p {
+    margin-top: 24px;
+  }
+  .full-container {
+    max-width: 90%;
+  }
+  .full-container .card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .full-container .card-container .product-card {
+    max-width: 45%;
+  }
+}
 /* @import url("https://fonts.cdnfonts.com/css/suncos"); *//*# sourceMappingURL=App.css.map */

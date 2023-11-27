@@ -9,10 +9,10 @@ body {
   flex-direction: column;
 }
 
-// ----- Mobile -----
+// ----- All Mobile -----
 
 .container {
-  width: 80%;
+  max-width: 80%;
   margin: auto;
   margin-bottom: $big-margin;
   flex-grow: 1;
@@ -28,9 +28,6 @@ li,
 button {
   font-size: $mob-sub-size;
   text-decoration: none;
-
-  // Delete this!
-  color: #583b3b;
 }
 
 p,
@@ -48,8 +45,13 @@ textarea {
   align-items: center;
   margin-bottom: $big-margin;
   #logo {
+    a {
+      display: flex;
+      align-items: center;
+    }
     img {
       align-items: center;
+      max-width: 40vw;
     }
   }
   .left-nav {
@@ -160,16 +162,19 @@ textarea {
     margin-bottom: $med-margin;
     text-align: center;
   }
+  .blurb {
+    margin-bottom: $very-big-margin;
+  }
   .cta {
     display: flex;
     flex-direction: row;
     align-items: center;
     a {
-      margin-left: $med-margin;
-      margin-right: $med-margin;
+      margin-left: $big-margin;
+      margin-right: $big-margin;
     }
     .inquire {
-      border-radius: $med-margin;
+      border-radius: $big-margin;
       border: 2px solid;
       padding: $small-margin;
       padding-left: $med-margin;
@@ -179,18 +184,23 @@ textarea {
 }
 
 .landing-bg {
+  display: none;
   width: 100vw;
   height: 100vh;
   z-index: -1;
   opacity: 70%;
-  position: fixed;
+  position: absolute;
   top: 0;
-  img {
-    width: 100vw;
-    height: 100vh;
-  }
+  
 }
-
+.landing-bg-image {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  }
 // ----- Contact -----
 
 .contact-container {
@@ -213,7 +223,7 @@ textarea {
     button {
       width: 100%;
       min-height: 36px;
-      border-radius: $med-margin;
+      border-radius: $big-margin;
       border: none;
       margin-bottom: $med-margin;
       padding-top: $med-margin;

@@ -1,0 +1,84 @@
+@media screen and (min-width: 992px) {
+  // ----- All Desktop -----
+
+  .container {
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: $big-margin;
+    flex-grow: 1;
+  }
+
+  h2 {
+    font-size: $head-size;
+  }
+
+  h3,
+  a,
+  li,
+  button {
+    font-size: $sub-size;
+    text-decoration: none;
+  }
+
+  p,
+  input,
+  textarea {
+    font-size: $body-size;
+  }
+
+  #topnav {
+    .left-nav {
+      ul {
+        li {
+          margin-left: $med-margin;
+          margin-right: $med-margin;
+        }
+      }
+    }
+  }
+  
+  #social-media-icons {
+    img {
+      margin-left: $med-margin;
+      margin-right: $med-margin;
+    }
+  }
+
+  .single-container {
+    max-width: 40%;
+  }
+  .double-container {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: $big-margin;
+    .about-greeting {
+      display: none;
+    }
+    .left-container,
+    figure {
+      width: 50%;
+      margin-right: 12px;
+    }
+    .right-container,
+    .about-bio {
+      width: 50%;
+      p {
+        margin-top: $big-margin;
+      }
+    }
+  }
+  .full-container {
+    max-width: 90%;
+    .card-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .product-card {
+        max-width: 45%;
+      }
+    }
+  }
+}

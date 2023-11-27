@@ -6,8 +6,8 @@ import useCustomizer from "../hooks/useCustomizer";
 import Loading from "../components/Loading";
 
 const baseUrl = import.meta.env.VITE_WP_BASEURL;
-const LandingImageUrl = import.meta.env.VITE_WP_LANDING_IMAGE_URL;
-
+// const LandingImageUrl = import.meta.env.VITE_WP_LANDING_IMAGE_URL;
+// const landingImageUrl = `${baseUrl}/wp-content/uploads/2023/11/Tendrils-2019-Acrylic-on-Board-1-1.webp`
 const Home = () => {
   // const [logoUrl, setLogoUrl] = useState("");
 
@@ -62,7 +62,7 @@ const Home = () => {
     //   return <>{mappedLandings}</>;
     // };
 
-    setLandingBgStyle({ backgroundColor: `${landingBgColor}` });
+    setLandingBgStyle({ backgroundColor: `${landingBgColor}`  });
     // console.log({ landingBgColor });
   }, [landingBgColor]);
 
@@ -104,10 +104,10 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div key={landingBgColor} className="landing-bg" style={landingBgStyle}>
-          {/* <img src="" alt="" className="landing-bg-image" /> */}
+        <div key={landingBgColor} className="landing-bg" style={landingBgStyle}></div>
+          <img src="public/Tendrils - 2019 - Acrylic on Board .webp" alt="" className="landing-bg-image" />
           {/* {loading ? <Loading /> : <LandingImage landings={landingImage} />} */}
-        </div>
+        
       </div>
     </>
   );
