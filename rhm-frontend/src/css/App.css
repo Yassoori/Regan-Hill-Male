@@ -76,12 +76,12 @@ textarea {
   justify-content: space-around;
   align-items: center;
 }
-#topnav .left-nav ul {
+#topnav .left-nav #menu {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-#topnav .left-nav ul li {
+#topnav .left-nav #menu li {
   margin-left: 6px;
   margin-right: 6px;
 }
@@ -89,6 +89,9 @@ textarea {
   width: 30px;
   margin-left: 6px;
   margin-right: 6px;
+}
+#topnav .left-nav #menu-container, #topnav .left-nav .mobile-menu-container {
+  display: none;
 }
 #topnav .left-nav .menu-container {
   margin-left: 6px;
@@ -136,8 +139,8 @@ textarea {
   align-items: center;
 }
 .home-text .cta a {
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 .home-text .cta .inquire {
   border-radius: 24px;
@@ -321,13 +324,23 @@ textarea {
   textarea {
     font-size: 20px;
   }
-  #topnav .left-nav ul li {
+  #topnav .left-nav menu {
+    display: flex;
+  }
+  #topnav .left-nav menu li {
     margin-left: 12px;
     margin-right: 12px;
+  }
+  #topnav .left-nav #menu-container, #topnav .left-nav .mobile-menu-container {
+    display: none;
   }
   #social-media-icons img {
     margin-left: 12px;
     margin-right: 12px;
+  }
+  .cta a {
+    margin-left: 24px;
+    margin-right: 24px;
   }
   .single-container {
     max-width: 40%;

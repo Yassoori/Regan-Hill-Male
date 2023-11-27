@@ -28,21 +28,31 @@
 
   #topnav {
     .left-nav {
-      ul {
+        menu {
+            display: flex;
         li {
           margin-left: $med-margin;
           margin-right: $med-margin;
         }
       }
+      #menu-container, .mobile-menu-container {
+        display: none;
+      }
     }
   }
-  
+
   #social-media-icons {
     img {
       margin-left: $med-margin;
       margin-right: $med-margin;
     }
   }
+
+  .cta {    
+    a {
+    margin-left: $big-margin;
+    margin-right: $big-margin;
+  }}
 
   .single-container {
     max-width: 40%;

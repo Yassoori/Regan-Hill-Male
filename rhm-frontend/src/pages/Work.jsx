@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
-// import useCustomizer from "../hooks/useCustomizer";
 
 const productsUrl = import.meta.env.VITE_WC_PRODUCTS_URL;
 
@@ -49,7 +48,6 @@ const Work = () => {
 
   const Products = ({ products }) => {
     const mappedProducts = products.map((product, index) => {
-      // const type = work.acf.work_type
       return (
         <div key={product.slug + "_" + index} className="product-card">
           <Link className="product-link" to={`/product/${product.id}`}>

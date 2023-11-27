@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import Loading from "./Loading";
 
-// Products Url
 const productsUrl = import.meta.env.VITE_WC_PRODUCTS_URL;
 
 const Product = () => {

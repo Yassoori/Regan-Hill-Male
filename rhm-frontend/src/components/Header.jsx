@@ -1,19 +1,15 @@
 import { useState, useEffect } from "react";
-// import mobile menu
 import MobileMenu from "./MobileMenu";
 import { Link } from "react-router-dom";
-// import List for bootstrap icons
 import { List } from "react-bootstrap-icons";
 import axios from "axios";
 
 const baseUrl = import.meta.env.VITE_WP_BASEURL;
 
 const Header = () => {
-  //set a state to check if the mobile menu is open or not
   const [menuIsOpen, openMenu] = useState(false);
   const [logoUrl, setLogoUrl] = useState("");
 
-  //fetch the logo with useEffect:
   useEffect(() => {
     const fetchNavLogo = async () => {
       try {
@@ -22,7 +18,6 @@ const Header = () => {
         );
         if (response.status === 200) {
           const data = response.data;
-          // console.log(response.data);
           setLogoUrl(data[0]);
         } else {
           console.error("Failed to fetch logo url", error);
@@ -38,6 +33,12 @@ const Header = () => {
   const toggleMobileMenu = () => {
     openMenu(!menuIsOpen);
     document.body.classList.toggle("no-scroll");
+
+    // $(document).ready(function () {
+    //   $("#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4").click(function () {
+    //     $(this).toggleClass("open");
+    //   });
+    // });
   };
   return (
     <>
@@ -64,7 +65,7 @@ const Header = () => {
 
           {/* Hamburger on Mobile */}
           <div id="menu-container">
-            {/* <div id="nav-icon3" id="menu-button"
+            {/* <div id="nav-icon3 menu-button"
               className="show-mobile-menu-button"
               onClick={toggleMobileMenu}>
               <span></span>
@@ -82,9 +83,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      {/* If menuIsOpen, show the mobile menu */}
-      {/* give the mobile menu our close method as a prop */}
       {menuIsOpen && <MobileMenu closeMethod={toggleMobileMenu} />}
     </>
   );

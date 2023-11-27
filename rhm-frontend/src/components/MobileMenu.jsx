@@ -3,7 +3,7 @@ import { X } from 'react-bootstrap-icons'
 
 const MobileMenu = ({closeMethod}) => {
   return (
-    <>
+    <div className="mobile-menu-container">
       <button id='close-nav-menu' onClick={closeMethod}>
         <X />
       </button>
@@ -22,7 +22,7 @@ const MobileMenu = ({closeMethod}) => {
           <Link to='/contact' onClick={closeMethod}>Contact</Link>
         </li>
       </ul>
-    </>
+    </div>
   )
 }
 

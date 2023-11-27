@@ -21,11 +21,10 @@ const About = () => {
 
   const AboutEntry = ({ abouts }) => {
     if (!abouts) {
-      return null; // Handle the case when abouts is undefined or null
+      return null; 
     }
 
     const mappedAbouts = abouts.map((about, index) => (
-      // <div className="about" key={index}>
       <div
         className="about-container double-container"
         key={index}

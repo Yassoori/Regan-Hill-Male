@@ -58,7 +58,7 @@ textarea {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    ul {
+    #menu {
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -72,12 +72,17 @@ textarea {
       margin-left: $small-margin;
       margin-right: $small-margin;
     }
+    #menu-container, .mobile-menu-container {
+      display: none;
+    }
     .menu-container {
       margin-left: $small-margin;
       margin-right: $small-margin;
     }
   }
 }
+
+// ----- Hamburger -----
 
 // #nav-icon3 span:nth-child(1) {
 //   top: 0px;
@@ -120,12 +125,6 @@ textarea {
 // ----- Footer -----
 
 #footer {
-  // position: absolute;
-  // position: relative;
-  // bottom: -100px;
-  // bottom: $med-margin;
-  // left: $med-margin;
-  // right: $med-margin;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -143,9 +142,6 @@ textarea {
       margin-right: $small-margin;
     }
   }
-  // p {
-  //   margin: .5em;
-  // }
 }
 
 // ----- Home -----
@@ -170,8 +166,8 @@ textarea {
     flex-direction: row;
     align-items: center;
     a {
-      margin-left: $big-margin;
-      margin-right: $big-margin;
+      margin-left: $med-margin;
+      margin-right: $med-margin;
     }
     .inquire {
       border-radius: $big-margin;
