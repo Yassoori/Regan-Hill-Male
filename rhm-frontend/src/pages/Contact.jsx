@@ -6,24 +6,19 @@ const formEndpoint = import.meta.env.VITE_APP_WP_API_FORM_ENDPOINT
 console.log(formEndpoint);
 
 const ContactForm = () => {
-    // state for from submission
     const [submitted, setSubmitted] = useState(false)
     const [error, setError] = useState(false)
-    // set state for our input values
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        // object for our form - append data to it so we can send it
         const testForm = new FormData()
         testForm.append('your-name', name)
         testForm.append('your-email', email)
         testForm.append('your-message', message)
 
-        // AXIOS CALL
-        // first argument is the endpoint, second is the the form data:
         axios.post(formEndpoint, testForm, {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -39,7 +34,6 @@ const ContactForm = () => {
         })
     }
 
-    // Conditionals - if Submitted or if Error
     if (submitted) {
         return (
             <>
@@ -58,16 +52,13 @@ const ContactForm = () => {
         )
     }
 
-    // Form to be returned
     return (
         <>
             <form
                 onSubmit={handleSubmit}
                 method='POST'
             >
-                {/* Name input */}
                 <div>
-                    {/* <label htmlFor='name'>Name</label> */}
                     <input
                         type="text"
                         name="name"
@@ -77,10 +68,7 @@ const ContactForm = () => {
                         placeholder='Your name'
                     />
                 </div>
-
-                {/* Email input */}
                 <div>
-                    {/* <label htmlFor='email'>Email</label> */}
                     <input
                         type="email"
                         name="email"
@@ -90,10 +78,7 @@ const ContactForm = () => {
                         placeholder='Your email'
                     />
                 </div>
-
-                {/* Message input */}
                 <div>
-                    {/* <label htmlFor='message'>Message</label> */}
                     <textarea
                         name="message"
                         onChange={(event) => setMessage(event.target.value)}
@@ -121,8 +106,9 @@ const Contact = () => {
   return (
     <>
         <div id='contact-container' className='container single-container'>
-            <div>
-                <h2>Get in Touch</h2>
+            <div className='contact-container'>
+                <h2 className='contact-heading'>Get in Touch</h2>
+                <p className='contact-sub'>Interested in commissioning me to paint a mural, or be involved in any other project? Flick me a message about it and we can start from there.</p>
                 <ContactForm/>
             </div>
         </div>

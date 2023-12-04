@@ -1,6 +1,353 @@
 html,
 body {
   position: relative;
-  height: 100%;
 }
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// ----- All Mobile -----
+
+.container {
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: $big-margin;
+  flex-grow: 1;
+}
+
+h2 {
+  font-size: $mob-head-size;
+}
+
+h3,
+a,
+li,
+button {
+  font-size: $mob-sub-size;
+  text-decoration: none;
+}
+
+p,
+input,
+textarea {
+  font-size: $mob-body-size;
+}
+
+// ----- Header -----
+
+#topnav {
+  margin: $small-margin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $big-margin;
+  #logo {
+    a {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      align-items: center;
+      max-width: 40vw;
+    }
+  }
+  .left-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    #menu {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      li {
+        margin-left: $small-margin;
+        margin-right: $small-margin;
+      }
+    }
+    img {
+      width: 30px;
+      margin-left: $small-margin;
+      margin-right: $small-margin;
+    }
+    #menu-container, .mobile-menu-container {
+      display: none;
+    }
+    .menu-container {
+      margin-left: $small-margin;
+      margin-right: $small-margin;
+    }
+  }
+}
+
+// ----- Hamburger -----
+
+// #nav-icon3 span:nth-child(1) {
+//   top: 0px;
+// }
+
+// #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+//   top: 18px;
+// }
+
+// #nav-icon3 span:nth-child(4) {
+//   top: 36px;
+// }
+
+// #nav-icon3.open span:nth-child(1) {
+//   top: 18px;
+//   width: 0%;
+//   left: 50%;
+// }
+
+// #nav-icon3.open span:nth-child(2) {
+//   -webkit-transform: rotate(45deg);
+//   -moz-transform: rotate(45deg);
+//   -o-transform: rotate(45deg);
+//   transform: rotate(45deg);
+// }
+
+// #nav-icon3.open span:nth-child(3) {
+//   -webkit-transform: rotate(-45deg);
+//   -moz-transform: rotate(-45deg);
+//   -o-transform: rotate(-45deg);
+//   transform: rotate(-45deg);
+// }
+
+// #nav-icon3.open span:nth-child(4) {
+//   top: 18px;
+//   width: 0%;
+//   left: 50%;
+// }
+
+// ----- Footer -----
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: $big-margin;
+  margin-bottom: $big-margin;
+  align-items: center;
+
+  #social-media-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: $small-margin;
+    img {
+      width: 30px;
+      margin-left: $small-margin;
+      margin-right: $small-margin;
+    }
+  }
+}
+
+// ----- Home -----
+
+.home-text {
+  max-width: 70%;
+  margin: auto;
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2,
+  .blurb {
+    margin-bottom: $med-margin;
+    text-align: center;
+  }
+  .blurb {
+    margin-bottom: $very-big-margin;
+  }
+  .cta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    a {
+      margin-left: $med-margin;
+      margin-right: $med-margin;
+    }
+    .inquire {
+      border-radius: $big-margin;
+      border: 2px solid;
+      padding: $small-margin;
+      padding-left: $med-margin;
+      padding-right: $med-margin;
+    }
+  }
+}
+
+.landing-bg {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 70%;
+  position: absolute;
+  top: 0;
+  
+}
+.landing-bg-image {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  }
+// ----- Contact -----
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  h2,
+  p {
+    margin-bottom: $small-margin;
+  }
+  p {
+    padding-left: $small-margin;
+    padding-right: $small-margin;
+  }
+  form {
+    width: 100%;
+    input,
+    textarea,
+    button {
+      width: 100%;
+      min-height: 36px;
+      border-radius: $big-margin;
+      border: none;
+      margin-bottom: $med-margin;
+      padding-top: $med-margin;
+      padding-bottom: $med-margin;
+      padding-left: $med-margin;
+      padding-right: $med-margin;
+      text-align: start;
+      resize: none;
+      resize: vertical;
+    }
+    textarea {
+      min-height: 108px;
+    }
+    button {
+      text-align: center;
+      background: none;
+      border: 2px solid;
+    }
+  }
+}
+
+// ----- About -----
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  h2,
+  p {
+    margin-bottom: $small-margin;
+  }
+  p {
+    padding-left: $small-margin;
+    padding-right: $small-margin;
+  }
+  figure {
+    max-width: 100%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: $med-margin;
+    margin-bottom: $med-margin;
+  }
+}
+
+// ----- Work -----
+
+.filter {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: $med-margin;
+  li {
+    margin-right: $med-margin;
+    // min-height: 36px;
+    // border-radius: $med-margin;
+    // border: 2px solid;
+    // margin-bottom: $med-margin;
+    // padding-top: $small-margin;
+    // padding-bottom: $small-margin;
+    // padding-left: $med-margin;
+    // padding-right: $med-margin;
+  }
+}
+
+.card-container {
+  .product-card {
+    position: relative;
+    margin-bottom: $med-margin;
+    h2,
+    h3 {
+      margin-bottom: $small-margin;
+    }
+
+    .title {
+      width: 75%;
+      grid-area: "title";
+    }
+    .price {
+      position: absolute;
+      top: 0;
+      right: 0;
+      grid-area: "price";
+    }
+    .short-description {
+      display: flex;
+      flex-direction: row;
+      h3 {
+        margin-right: $small-margin;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: $med-margin;
+      margin-bottom: $med-margin;
+    }
+  }
+}
+
+// ----- Product -----
+
+.left-container {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: $med-margin;
+    margin-bottom: $med-margin;
+  }
+}
+
+.right-container {
+  position: relative;
+  h2,
+  h3 {
+    margin-bottom: $small-margin;
+  }
+
+  .title {
+    width: 75%;
+    grid-area: "title";
+  }
+  .price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    grid-area: "price";
+  }
+}

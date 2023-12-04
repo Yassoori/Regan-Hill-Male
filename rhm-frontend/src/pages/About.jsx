@@ -21,13 +21,16 @@ const About = () => {
 
   const AboutEntry = ({ abouts }) => {
     if (!abouts) {
-      return null; // Handle the case when abouts is undefined or null
+      return null; 
     }
 
     const mappedAbouts = abouts.map((about, index) => (
-      <div className="about" key={index}>
-        <div dangerouslySetInnerHTML={{ __html: about.content.rendered }} />
-      </div>
+      <div
+        className="about-container double-container"
+        key={index}
+        dangerouslySetInnerHTML={{ __html: about.content.rendered }}
+      />
+      // </div>
     ));
 
     return <>{mappedAbouts}</>;
@@ -40,14 +43,13 @@ const About = () => {
         <meta name="description" content="This is the about page" />
         <meta name="keywords" content="keyword1, keyword2, keyword3" />
         {/* Additional meta tags, e.g., social media share tags for Twitter, etc. */}
-        <meta property="og:title" content="Facebook Open Graph Meta Tag example" />
+        <meta
+          property="og:title"
+          content="Facebook Open Graph Meta Tag example"
+        />
       </Helmet>
-      <div className="container double-container">
-        {loading ? (
-          <Loading />
-        ) : (
-          <AboutEntry abouts={aboutEntry} />
-        )}
+      <div className="container">
+        {loading ? <Loading /> : <AboutEntry abouts={aboutEntry} />}
       </div>
     </>
   );

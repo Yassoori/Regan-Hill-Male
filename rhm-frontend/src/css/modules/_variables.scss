@@ -25,20 +25,21 @@
   
   // Type Sizes
   
-  $head-size: 40px;
-  $sub-size: 30px;
-  $body-size: 20px;
-  $button-size: 22px;
-  
+  $head-size: 36px;
+  $sub-size: 24px;
+  $body-size: 20px;  
   $mob-head-size: 24px;
-  $mob-sub-size: 20px;
-  $mob-body-size: 14px;
-  $mob-button-size: 16px;
+  $mob-sub-size: 16px;
+  $mob-body-size: 12px;
   
   // Margins
+
+  $very-big-margin: 48px;
+  $big-margin: 24px;
+  $med-margin: 12px;
+  $small-margin: 6px;
   
-  $margin-bottom: 2em;
-  $big-margin-bottom: 4em;
-  $desktop-margin: 1em;
-  $mob-margin: 0.5em;
-  
+  // $very-big-margin: 4em;
+  // $big-margin: 2em;
+  // $med-margin: 1em;
+  // $small-margin: 0.5em;

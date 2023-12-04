@@ -48,16 +48,16 @@ const Work = () => {
 
   const Products = ({ products }) => {
     const mappedProducts = products.map((product, index) => {
-      // const type = work.acf.work_type
       return (
         <div key={product.slug + "_" + index} className="product-card">
           <Link className="product-link" to={`/product/${product.id}`}>
             <h2 className="title">{product.name}</h2>
             <h2 className="price">
-              ${(parseFloat(product.prices.price) / 100).toFixed(2)}{" "}
-              {product.prices.currency_code}
+              ${(parseFloat(product.prices.price) / 100).toFixed(2)}{/* {" "}
+              {product.prices.currency_code} */}
             </h2>
             <div
+              className="short-description"
               dangerouslySetInnerHTML={{ __html: product.short_description }}
             />
             <img src={product.images[0].src} alt={product.name} />
@@ -76,7 +76,7 @@ const Work = () => {
         <li onClick={() => handleFilterClick("Print")}>Prints</li>
         <li onClick={() => handleFilterClick("Painting")}>Paintings</li>
       </ul>
-      <div className="container">
+      <div className="card-container">
         {loading ? (
           <Loading />
         ) : (
